@@ -1,4 +1,4 @@
-package com.teste.cep.testecep;
+package com.teste.cep.testecep.controllers;
 
 import com.teste.cep.testecep.entities.Usuario;
 import com.teste.cep.testecep.repositories.UsuarioRepository;
