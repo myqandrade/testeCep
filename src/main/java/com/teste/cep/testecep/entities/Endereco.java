@@ -1,5 +1,6 @@
 package com.teste.cep.testecep.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,9 +18,7 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String cep;
-    private String logradouro;
-    private String complemento;
-    private String bairro;
-    private String localidade;
-    private String uf;
+    @OneToOne(mappedBy = "endereco")
+    @JsonIgnore
+    private Usuario usuario;
 }

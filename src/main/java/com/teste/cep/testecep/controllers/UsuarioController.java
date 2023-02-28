@@ -24,7 +24,7 @@ public class UsuarioController {
     public ResponseEntity getCep(@RequestParam(name = "id") Integer id){
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         try{
-            String uri = "https://viacep.com.br/ws/" + usuario.get().getCep() + "/json/";
+            String uri = "https://viacep.com.br/ws/" + usuario.get().getEndereco().getCep() + "/json/";
             RestTemplate restTemplate = new RestTemplate();
             String result = restTemplate.getForObject(uri, String.class);
             String cepJson = new Gson().toJson(result);
